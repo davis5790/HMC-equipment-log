@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home page</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" th:href="|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|"/>
+</head>
+<body>
+    <p>
+        <span th:text="Equipment-Log"></span>
+    </p>
+
+    <div th:if="${ not#lists.isEmpty(items)}">
+        <table class="table">
+            <tr>
+                <th> Device </th>
+                <th> H-Number </th>
+                <th> Date </th>
+                <th> Time </th>
+                <th> Signed by </th>
+            </tr>
+            <tr th:each="items : ${items}">
+                <td th:text="${items.device}"></td>
+                <td th:text="${items.HNumber}"></td>
+                <td th:text="${items.date}"></td>
+                <td th:text="${items.time}"></td>
+                <td th:text="${items.name}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting started: Spring Boot and the DynamoDB Enhanced Client</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|"/>
+    <script src="/js/search.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Hillcrest Medical Center Equipment Log</h1>
+    <p>Enter the H-Number to view the log for a specific device</p>
+
+    <form action="#" th:action="@{/Search}" th:object="${search}" method="post">
+
+        <div class ="form-group">
+            <h3>Time Period: <select th:field="*{timePeriodDays}" autocomplete="off">
+                <option th:value='null' th:text="'All Time'" selected></option>
+                <option th:value='1' th:text="'Day'"></option>
+                <option th:value='7' th:text="'Week'"></option>
+                <option th:value='30' th:text="'Month'"></option>
+                <option th:value='90' th:text="'3 Months'"></option>
+                <option th:value='180' th:text="'6 Months'" ></option>
+            </select> </h3>
+        </div>
+
+        <div class="form-group">
+            <h3>H-Number: <input type="text"  class="form-control" th:field="*{HNumber}" th:default="null" placeholder="H12345"/></h3>
+        </div>
+
+        <div class="form-group">
+            <h3>Device: <select th:field="*{device}">
+                <option th:value='null' th:text="None" selected></option>
+                <option th:value="'Drager'" th:text="Drager"></option>
+                <option th:value="'G5'" th:text="G5"></option>
+                <option th:value="'C1'" th:text="C1"></option>
+                <option th:value="'Comfort-Flow'" th:text="Comfort-Flow"></option>
+                <option th:value="'Vapotherm'" th:text="Vapotherm"></option>
+                <option th:value="'V60'" th:text="V60"></option>
+            </select></h3>
+        </div>
+
+        <div class="form-group">
+            <h3>Email report  <input type="checkbox" value="Accept" onClick="EnableSubmit(this)" style="transform: scale(2,2); margin-right: 10px; margin-left: 10px" autocomplete="off"/> <input type="email" id="emailField" th:field="*{email}" class="" placeholder="Example@example.com" hidden/></h3>
+        </div>
+
+        <h3><input type="submit" value="Submit" /> <input type="reset" value="Reset" />  <button type="button"><a href="/" style="color: black; text-decoration: none;">Home</a></button> </h3>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting started: Handling form submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|"/>
+</head>
+<body>
+<div class="container">
+        <form th:object="${name}">
+            <h1>Hillcrest Medical Center Equipment Log</h1>
+            <p th:text="'Thank you for logging equipment ' + ${name} + '!'" />
+        </form>
+    <form action="/">
+        <h3><input type="submit" value="Log More Equipment"></h3>
+    </form>
+</div>
+</body>
+</html>

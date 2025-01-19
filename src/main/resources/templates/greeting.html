@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting started: Spring Boot and the DynamoDB Enhanced Client</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|"/>
+    <script src="/js/greeting.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Hillcrest Medical Center Equipment Log</h1>
+    <p>Log equipment by entering the H-number, your name, and the type of equipment you are logging. </p>
+    <p>Please attach a note to your submission if you encountered any errors with the device or were unable to complete a successful SST, if applicable.</p>
+    <form action="#" th:action="@{/greeting}" th:object="${EnhancedLogItem}" method="post">
+        <div class="form-group">
+            <h3>H-Number: <input type="text"  class="form-control" th:field="*{HNumber}" placeholder="H12345"/></h3>
+        </div>
+        <div class="form-group">
+            <h3>Name: <input type="text" class="form-control" th:field="*{name}" placeholder="John Smith"/></h3>
+        </div>
+        <div class="form-group">
+            <h3>Device: <select th:field="*{device}" id="mySelect" onchange="SSTcheck()">
+                <option th:value="''" th:text="None"></option>
+                <option th:value="'Drager'" th:text="Drager" ></option>
+                <option th:value="'G5'" th:text="G5"></option>
+                <option th:value="'C1'" th:text="C1"></option>
+                <option th:value="'Comfort-Flow'" th:text="Comfort-Flow"></option>
+                <option th:value="'Vapotherm'" th:text="Vapotherm"></option>
+                <option th:value="'V60'" th:text="V60"></option>
+            </select></h3>
+        </div>
+        <div class="form-group" >
+            <h3 id="SST" hidden>Successful SST: <input type="checkbox" th:value="*{SST}"  style="transform: scale(2,2); margin-right: 10px; margin-left: 10px" autocomplete="off"/></h3>
+        </div>
+        <div class="form-group">
+            <h3>Add note:  <input type="checkbox"  style="transform: scale(2,2); margin-right: 10px; margin-left: 10px" autocomplete="off" onClick="addNote(this)"/></h3>
+            <h3><input type="text" id="note" class="" th:field="*{note}" hidden/></h3>
+        </div>
+        <h3><button type="submit" value="Submit">Submit</button> <button type="reset">Reset</button> <button type="button"><a href="/admin" style="color: black; text-decoration: none;">Search</a></button> </h3>
+    </form>
+
+</div>
+</body>
+</html>
