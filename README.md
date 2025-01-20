@@ -1,0 +1,7 @@
+In the US, healthcare facilities are regulated by a number of accreditation organizations. Hospitals and clinics are held to certain safety, cleanliness, and informational privacy standards by these regulatory bodys.
+Specifically in Respiratory Care Departemnts, we are required to maintain of log of when, how, and who has performed cleaning and maintainence on ventilators and other machines involved in patient care, and be ready to present these logs upon request.
+Currently these logs are on paper on a shelf. Compliance is a challenge because of the time it takes to find the serial number on the machine, look it up in the book, and add the information.
+The goal of this project was to digitize those logs, making equipment logging easier to complete. By making the process easier, we also hope to increase compliance with equipment logging and increase the accuracy of our logs. 
+Secondary to increasing compliance and accuracy, having these logs in a database enables management to gain new insights into the frequency of our equipment usage, or how/when/why equipment might be displaying errors or need repair.
+Having this information easily accessable results in more efficient use of our equipment, provides data to justify adding or removing extra equipment leading to departmental savings on rental costs, and enables us to more quickly and accurately predict and diagnose potential issues with broken equipment.
+
